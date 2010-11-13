@@ -93,6 +93,8 @@ GEM
     rspec-mocks (2.1.0)
     rspec-rails (2.1.0)
       rspec (~> 2.1.0)
+    seed-fu (2.0.1)
+      activerecord (~> 3.0.0)
     sqlite3-ruby (1.2.5)
     term-ansicolor (1.0.5)
     thor (0.14.4)
@@ -117,5 +119,6 @@ DEPENDENCIES
   rails (= 3.0.0)
   rspec
   rspec-rails (>= 2.0.0.beta.19)
+  seed-fu
   sqlite3-ruby
   webrat (>= 0.7.1)
