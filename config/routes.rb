@@ -1,4 +1,6 @@
 Eatsocial::Application.routes.draw do
+  resources :subscriptions
+
   devise_for :people
 
   # The priority is based upon order of creation:
