@@ -1,5 +1,9 @@
 Eatsocial::Application.routes.draw do
-  resources :events
+  resources :events do
+    post :subscribe
+    post :unsubscribe
+  end
+  
   resources :subscriptions
 
   devise_for :people, :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up => 'register' }
