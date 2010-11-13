@@ -1,11 +1,11 @@
-<div data-role="page" data-theme="a"> 
+<div> 
 
 <h1>Listing events</h1>
-<ul>
+<ul data-role="listview" data-theme="g">
 
   <% @events.each do |e| %>
   <li><span class="countdown">5min</span> 
-    <%  Person.first  %>
+    <%=  Person.first.first_name  %> is going to <%= e.location %>
   </li>
   <% end %>
 
