@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+
   before_filter :authenticate_person!
   respond_to :html
 
@@ -12,6 +13,13 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     respond_with @event
+  end
+  # POST /events/1/subscribe
+  def subscribe
+    @event = Event.find(params[:event_id])
+    current_person.events << @event
+    
+    redirect_to :action => 'index'
   end
 
   # GET /events/new
@@ -48,6 +56,22 @@ class EventsController < ApplicationController
     respond_with(@event)
   end
 
+  # POST /events/1/subscribe
+  def subscribe
+    @event = Event.find(params[:event_id])
+    current_person.events << @event
+    
+    redirect_to :action => 'index'
+  end
+
+  # POST /events/1/subscribe
+  def unsubscribe
+    @event = Event.find(params[:event_id])
+    current_person.events.delete(@event)
+    
+    redirect_to :action => 'index'
+  end
+  
   # DELETE /events/1
   def destroy
     @event = Event.find(params[:id])

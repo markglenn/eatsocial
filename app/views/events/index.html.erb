@@ -19,6 +19,7 @@
     <th></th>
     <th></th>
     <th></th>
+    <th></th>
   </tr>
 
 <% @events.each do |event| %>
@@ -26,6 +27,11 @@
     <td><%= event.location %></td>
     <td><%= event.time %></td>
     <td><%= event.image_location %></td>
+    <% if event.subscribed?(current_person) %>
+    <td><%= link_to 'Unregister', event_unsubscribe_path(event), :method => :post %></td>
+    <% else %>
+    <td><%= link_to 'Register', event_subscribe_path(event), :method => :post %></td>
+    <% end %>
     <td><%= link_to 'Show', event %></td>
     <td><%= link_to 'Edit', edit_event_path(event) %></td>
     <td><%= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete %></td>
