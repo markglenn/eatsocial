@@ -1,4 +1,6 @@
 Eatsocial::Application.routes.draw do
+  resources :events
+
   resources :subscriptions
 
   devise_for :people
