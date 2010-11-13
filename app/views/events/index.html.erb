@@ -1,4 +1,4 @@
-<div data-theme="g" id="jqm-home"> 
+<div data-theme="g"> 
 
 <div data-role="header" data-position="fixed">
   <h1>Signal Booth</h1>
@@ -7,13 +7,12 @@
 <ul data-role="listview">
 
   <% @events.each do |e| %>
-  <li><span class="countdown">5min</span> 
-    <%=  Person.first.first_name  %> is going to <%= e.location %>
+  <li><span class="countdown" data-time='<%= e.time %>'>5min</span> 
+    <%= Person.first.first_name %> is going to <%= e.location %>
   </li>
   <% end %>
 
 </ul>
 
-<br />
 
-<%# link_to 'New Event', new_event_path %>
+</div>
