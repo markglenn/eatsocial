@@ -1,4 +1,15 @@
+<div> 
+
 <h1>Listing events</h1>
+<ul data-role="listview" data-theme="g">
+
+  <% @events.each do |e| %>
+  <li><span class="countdown">5min</span> 
+    <%=  Person.first.first_name  %> is going to <%= e.location %>
+  </li>
+  <% end %>
+
+</ul>
 
 <table>
   <tr>
@@ -31,3 +42,12 @@
 <br />
 
 <%= link_to 'New Event', new_event_path %>
+
+<h1>Header</h1>
+  <ul>
+  <li>hello</li>
+  <li>hello</li>
+  <li>hello</li>
+</ul>
+
+</div>
