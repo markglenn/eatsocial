@@ -1,4 +1,15 @@
+<div data-role="page" data-theme="a"> 
+
 <h1>Listing events</h1>
+<ul>
+
+  <% @events.each do |e| %>
+  <li><span class="countdown">5min</span> 
+    <%  Person.first  %>
+  </li>
+  <% end %>
+
+</ul>
 
 <table>
   <tr>
@@ -25,3 +36,12 @@
 <br />
 
 <%= link_to 'New Event', new_event_path %>
+
+<h1>Header</h1>
+  <ul>
+  <li>hello</li>
+  <li>hello</li>
+  <li>hello</li>
+</ul>
+
+</div>
