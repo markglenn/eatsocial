@@ -1,53 +1,18 @@
-<div data-theme="g" id="jqm-home"> 
+<div data-theme="g"> 
 
 <h1>Listing events</h1>
 <ul data-role="listview">
 
   <% @events.each do |e| %>
-  <li><span class="countdown">5min</span> 
-    <%=  Person.first.first_name  %> is going to <%= e.location %>
+  <li><span class="countdown" data-time='<%= e.time %>'>5min</span> 
+    <%= Person.first.first_name %> is going to <%= e.location %>
   </li>
   <% end %>
 
 </ul>
 
-<table>
-  <tr>
-    <th>Location</th>
-    <th>Time</th>
-    <th>Image location</th>
-    <th></th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @events.each do |event| %>
-  <tr>
-    <td><%= event.location %></td>
-    <td><%= event.time %></td>
-    <td><%= event.image_location %></td>
-    <% if event.subscribed?(current_person) %>
-    <td><%= link_to 'Unregister', event_unsubscribe_path(event), :method => :post %></td>
-    <% else %>
-    <td><%= link_to 'Register', event_subscribe_path(event), :method => :post %></td>
-    <% end %>
-    <td><%= link_to 'Show', event %></td>
-    <td><%= link_to 'Edit', edit_event_path(event) %></td>
-    <td><%= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
 <br />
 
 <%= link_to 'New Event', new_event_path %>
-
-<h1>Header</h1>
-  <ul>
-  <li>hello</li>
-  <li>hello</li>
-  <li>hello</li>
-</ul>
 
 </div>
