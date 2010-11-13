@@ -35,7 +35,7 @@ group :development, :test do
   gem "factory_girl_rails"
 end
 
-gem "devise"
+gem "devise", '1.1.2'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
