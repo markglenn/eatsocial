@@ -1,6 +1,9 @@
 <div data-theme="g" id="jqm-home"> 
 
-<h1>Listing events</h1>
+<div data-role="header" data-position="fixed">
+  <h1>Signal Booth</h1>
+</div>
+ 
 <ul data-role="listview">
 
   <% @events.each do |e| %>
@@ -11,36 +14,6 @@
 
 </ul>
 
-<table>
-  <tr>
-    <th>Location</th>
-    <th>Time</th>
-    <th>Image location</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @events.each do |event| %>
-  <tr>
-    <td><%= event.location %></td>
-    <td><%= event.time %></td>
-    <td><%= event.image_location %></td>
-    <td><%= link_to 'Show', event %></td>
-    <td><%= link_to 'Edit', edit_event_path(event) %></td>
-    <td><%= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
 <br />
 
-<%= link_to 'New Event', new_event_path %>
-
-<h1>Header</h1>
-  <ul>
-  <li>hello</li>
-  <li>hello</li>
-  <li>hello</li>
-</ul>
-
+<%# link_to 'New Event', new_event_path %>
