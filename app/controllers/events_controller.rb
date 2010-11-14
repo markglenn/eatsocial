@@ -38,6 +38,7 @@ class EventsController < ApplicationController
   # POST /events
   def create
     @event = Event.new(params[:event])
+    @event.people << current_person
     
     if @event.save  
       flash[:notice] = "Event was successfully created."  
