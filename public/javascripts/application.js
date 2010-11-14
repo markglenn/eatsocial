@@ -9,10 +9,10 @@
   });
   
 $(document).ready(function() {
+
   $('.countdown').each(function(){
     $(this).countdown({until: $(this).attr('data-time'), format:'wdhmS'}); 
   });
-
 	
 });
   
