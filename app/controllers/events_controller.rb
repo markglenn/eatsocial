@@ -14,6 +14,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     respond_with @event
   end
+  
   # POST /events/1/subscribe
   def subscribe
     @event = Event.find(params[:event_id])
@@ -58,13 +59,15 @@ class EventsController < ApplicationController
 
   # POST /events/1/subscribe
   def subscribe
+    puts params[:event_id]
     @event = Event.find(params[:event_id])
+    puts @event
     current_person.events << @event
     
     redirect_to :action => 'index'
   end
 
-  # POST /events/1/subscribe
+  # POST /events/1/unsubscribe
   def unsubscribe
     @event = Event.find(params[:event_id])
     current_person.events.delete(@event)

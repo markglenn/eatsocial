@@ -10,7 +10,7 @@
     <li>
       <%= link_to e do %>
         <span class="countdown" data-time='<%= e.time %>'></span> 
-        <%= e.people.first.first_name %> is going to <%= e.location %>
+        <%= e.owner.first_name unless e.owner == nil %> is going to <%= e.location %>
       <% end %>
   </li>
   <% end %>
