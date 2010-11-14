@@ -7,8 +7,11 @@
 <ul data-role="listview">
 
   <% @events.each do |e| %>
-  <li><span class="countdown" data-time='<%= e.time %>'>5min</span> 
-    <%= Person.first.first_name %> is going to <%= e.location %>
+    <li>
+      <%= link_to e do %>
+        <span class="countdown" data-time='<%= e.time %>'></span> 
+        <%= e.people.first.first_name %> is going to <%= e.location %>
+      <% end %>
   </li>
   <% end %>
 
