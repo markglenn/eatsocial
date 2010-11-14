@@ -14,6 +14,16 @@
   <li><span class="countdown" data-time='<%= e.time %>'>5min</span> 
     <%= current_person.first_name %> is going to <%= e.location %>
     with 3 people
+</li>
+<% end %>
+  <% @events.each do |e| %>
+    <li>
+      <%= link_to e do %>
+        <span class="countdown" data-time='<%= e.time %>'></span> 
+        <%= e.owner.first_name unless e.owner == nil %> is going to <%= e.location %>
+      <% end %>
+
+
   </li>
   <% end %>
 

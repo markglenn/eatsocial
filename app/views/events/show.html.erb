@@ -15,6 +15,25 @@
   <%= @event.image_location %>
 </p>
 
+<% if @event.owner == current_person %>
+  <%= form_tag event_unsubscribe_path(@event), :method => :post do %>
+    <%= submit_tag 'Unregister' %>
+  <% end %>
+<% elsif @event.people.exists?(current_person) %>
+  <%= form_tag event_unsubscribe_path(@event), :method => :post do %>
+    <%= submit_tag 'Unregister' %>
+  <% end %>
+<% else %>
+  <%= form_tag event_subscribe_path(@event), :method => :post do %>
+    <%= submit_tag 'Register' %>
+  <% end %>
+<% end %>
 
+
+
+<br />
+
+<% if @event.owner == current_person %>
 <%= link_to 'Edit', edit_event_path(@event) %> |
+<% end %>
 <%= link_to 'Back', events_path %>
