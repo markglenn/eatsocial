@@ -39,6 +39,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(params[:event])
     @event.people << current_person
+    @event.time = @event.time.in_time_zone("Central Time (US & Canada)")
     
     if @event.save  
       flash[:notice] = "Event was successfully created."  

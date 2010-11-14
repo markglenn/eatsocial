@@ -4,7 +4,7 @@
 $(function(){
   
   var pollBackend = function() {
-    $.getScript( "<%= event_subscriptions_path(event) %> " );
+    $.getScript( "<%= event_subscriptions_path(event) %>" );
   }
 
   pollBackend( );
