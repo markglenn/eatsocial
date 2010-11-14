@@ -8,10 +8,14 @@
 
   <% @events.each_with_index do |e,i| %>
 <% current_person = Person.find(i+1) %>
-<div>
+  <li>
+  
+  
+<div style="float:left !important; padding-right: 10px;" clear="both">
 <%= image_tag("#{current_person.image_url}") %>
 </div>
-  <li><span class="countdown" data-time='<%= e.time %>'>5min</span> 
+  
+  <span class="countdown" data-time='<%= e.time %>'>5min</span> 
     <%= current_person.first_name %> is going to <%= e.location %>
     with 3 people
 </li>
