@@ -55,6 +55,9 @@ GEM
       term-ansicolor (~> 1.0.5)
     haml (3.0.23)
     i18n (0.4.2)
+    jquery-rails (0.2.5)
+      rails (~> 3.0)
+      thor (~> 0.14.4)
     json (1.4.6)
     mail (2.2.9)
       activesupport (>= 2.3.6)
@@ -116,6 +119,7 @@ DEPENDENCIES
   devise (= 1.1.2)
   factory_girl_rails
   haml
+  jquery-rails
   rails (= 3.0.0)
   rspec
   rspec-rails (>= 2.0.0.beta.19)

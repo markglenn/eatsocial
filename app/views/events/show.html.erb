@@ -18,9 +18,9 @@
 <% if @event.owner == current_person %>
   <%= button_to 'Delete this event?', @event, :method => :delete %>
 <% elsif @event.people.exists?(current_person) %>
-  <%= button_to 'Unregister', { :action => 'unsubscribe', :method => :post, :id => @event.id } %>
+  <%= button_to 'Unregister', { :action => 'unsubscribe', :id => @event.id }, :method => :post %>
 <% else %>
-  <%= button_to 'Register', { :action => 'subscribe', :method => :post, :id => @event.id } %>
+  <%= button_to 'Register', { :action => 'subscribe', :id => @event.id }, :method => :post, :remote => true %>
 <% end %>
 
 <br />
