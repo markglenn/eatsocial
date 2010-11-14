@@ -17,7 +17,7 @@ class EventsController < ApplicationController
   
   # POST /events/1/subscribe
   def subscribe
-    @event = Event.find(params[:event_id])
+    @event = Event.find(params[:id])
     current_person.events << @event
     
     redirect_to :action => 'index'
@@ -59,9 +59,7 @@ class EventsController < ApplicationController
 
   # POST /events/1/subscribe
   def subscribe
-    puts params[:event_id]
-    @event = Event.find(params[:event_id])
-    puts @event
+    @event = Event.find(params[:id])
     current_person.events << @event
     
     redirect_to :action => 'index'
@@ -69,7 +67,7 @@ class EventsController < ApplicationController
 
   # POST /events/1/unsubscribe
   def unsubscribe
-    @event = Event.find(params[:event_id])
+    @event = Event.find(params[:id])
     current_person.events.delete(@event)
     
     redirect_to :action => 'index'

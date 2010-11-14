@@ -1,8 +1,10 @@
 Eatsocial::Application.routes.draw do
   
   resources :events do
-    post :subscribe
-    post :unsubscribe
+    member do
+      post :subscribe
+      post :unsubscribe
+    end
   end
   
   resources :subscriptions
