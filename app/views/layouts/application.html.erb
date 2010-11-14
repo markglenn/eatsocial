@@ -8,12 +8,18 @@
   <%= javascript_include_tag "application.js" %>
   <%= javascript_include_tag "jquery.mobile-1.0a2.min.js" %>
   <%= javascript_include_tag "rails.js" %>
-  <%= javascript_include_tag "jquery.bar.js" %>
+  <%= javascript_include_tag "jquery.notifyBar.js" %>
   <%= csrf_meta_tag %>
 </head>
 <body>
 
+<div data-role="page"> 
+<div data-role="header" data-position="fixed">
+  <h1>Signal Booth</h1>
+</div>
+
 <%= yield %>
+</div>
 
 </body>
 </html>

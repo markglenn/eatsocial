@@ -1,10 +1,9 @@
 /* jQuery Countdown styles 1.5.8. */
 .hasCountdown {
 /*	border: 1px solid #ccc; */
-	background-color: #eee;
-   margin-right: 10px;
-color: #999;
-float: right;
+  margin-right: 10px;
+  color: #999;
+  float: right;
 }
 .countdown_rtl {
 	direction: rtl;

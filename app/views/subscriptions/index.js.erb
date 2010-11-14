@@ -1,0 +1,5 @@
+
+
+$("#event-<%= @event.id %> .people").text(
+  '<%= pluralize(@event.people.count, 'person')%> going');
+

@@ -1,0 +1,13 @@
+<span id='register-buttons-<%= @event.id %>'>
+<% if @event.owner == current_person %>
+  <%= button_to 'Delete this event?', @event, :method => :delete, :remote => true %>
+<% elsif @event.subscribed?(current_person) %>
+  <%= form_tag unsubscribe_event_path(@event), :method => :post, :remote => true do %>
+    <%= submit_tag "I'm not going" %>
+  <% end %>
+<% else %>
+  <%= form_tag subscribe_event_path(@event), :method => :post, :remote => true do %>
+    <%= submit_tag "I'm going" %>
+  <% end %>
+<% end %>
+</span>

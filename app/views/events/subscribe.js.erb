@@ -1,0 +1,9 @@
+var form = $("#register-buttons-<%= @event.id %> > form")
+form.attr("action", "<%= unsubscribe_event_path(@event) %>" )
+form.find( "span.ui-btn-text" ).text("I'm not going")
+
+$.notifyBar({
+    html: "I'm now going!",
+    delay: 1000,
+    animationSpeed: "fast"
+  });

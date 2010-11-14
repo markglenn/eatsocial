@@ -8,20 +8,21 @@ $(function(){
   }
 
   pollBackend( );
-  setInterval(pollBackend, 5000);
+  //setInterval(pollBackend, 5000);
 });
 </script>
 
-<li id="event-<%= event.id %>" style="padding-left: 58px;" class='<%= "subscribed" if event.subscribed?(current_person) %>'>
+<li id="event-<%= event.id %>" class='<%= "subscribed" if event.subscribed?(current_person) %>'>
 
   <%= link_to event do %>
     
-    <%= image_tag("#{event.owner.image_url}", :style => "padding-right: 10px;", :clear => "both") %>
+    <%= image_tag("#{event.owner.image_url}") %>
     
+    <% if event.owner == current_person %>I am<% else %><%= event.owner.first_name %> is<% end %> going to 
+    
+    <h3><%= event.location %></h3>
+    <span class="people"><%= pluralize( event.people.count, "person" ) %> going</span>
     <span class="countdown" data-time='<%= event.time %>'></span>
-    <%= event.owner.first_name %> is going to <%= event.location %>
-    <span class="people"></span>
-    
   <% end %>
 
 </li>
