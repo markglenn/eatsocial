@@ -3,4 +3,6 @@
 <% else %>
 $("#event-<%= @event.id %> .people").text(
   '<%= pluralize(@event.people.count, 'person')%> going');
+  $('li#event-<%= @event_id %> > div').css("background-color", '<%= "#e1f0d6" if @event.subscribed?(current_person) %>');
 <% end %>
+
