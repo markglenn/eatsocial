@@ -13,7 +13,6 @@
         <div style="padding-right: 10px;" clear="both">
           <%= image_tag("#{e.owner.image_url}") %>
         </div>
-  
         <span class="countdown" data-time='<%= e.time %>'>5min</span> 
         <%= e.owner.first_name %> is going to <%= e.location %>
         <% if count > 1 %>

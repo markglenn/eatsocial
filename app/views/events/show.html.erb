@@ -16,8 +16,8 @@
 </p>
 
 <% if @event.owner == current_person %>
-  <%= form_tag event_unsubscribe_path(@event), :method => :post do %>
-    <%= submit_tag 'Unregister' %>
+  <%= form_tag event_path(@event), :confirm => 'Are you sure you want to delete this event?', :method => :delete do %>
+    <%= submit_tag 'Delete' %>
   <% end %>
 <% elsif @event.people.exists?(current_person) %>
   <%= form_tag event_unsubscribe_path(@event), :method => :post do %>
