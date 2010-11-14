@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
 
   before_filter :authenticate_person!
-  respond_to :html
+  respond_to :html, :js
 
   # GET /events
   def index
@@ -62,7 +62,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     current_person.events << @event
     
-    redirect_to :action => 'index'
+    respond_with(@event)
   end
 
   # POST /events/1/unsubscribe
@@ -70,7 +70,11 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     current_person.events.delete(@event)
     
-    redirect_to :action => 'index'
+    respond_to do |format|
+      format.js
+      format.html { redirect_to( events_path ) }
+    end
+    
   end
   
   # DELETE /events/1
@@ -81,4 +85,5 @@ class EventsController < ApplicationController
     flash[:notice] = "Successfully destroyed event."  
     respond_with(@event)
   end
+  
 end

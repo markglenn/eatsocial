@@ -4,4 +4,5 @@ module EventsHelper
     
     "with #{pluralize(count - 1, 'person')}" if count > 1
   end
+  
 end

@@ -1,6 +1,18 @@
 <% count = event.people.count %>
-    
-<li style="padding-left: 58px;" class='<%= "subscribed" if event.subscribed?(current_person) %>'>
+
+<script type="text/javascript">
+$(function(){
+  
+  var pollBackend = function() {
+    $.getScript( "<%= event_subscriptions_path(event) %> " );
+  }
+
+  pollBackend( );
+  setInterval(pollBackend, 5000);
+});
+</script>
+
+<li id="event-<%= event.id %>" style="padding-left: 58px;" class='<%= "subscribed" if event.subscribed?(current_person) %>'>
 
   <%= link_to event do %>
     
@@ -8,7 +20,7 @@
     
     <span class="countdown" data-time='<%= event.time %>'></span>
     <%= event.owner.first_name %> is going to <%= event.location %>
-    <%= count_description( event ) %>
+    <span class="people"></span>
     
   <% end %>
 

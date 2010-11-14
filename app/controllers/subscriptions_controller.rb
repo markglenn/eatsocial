@@ -1,11 +1,19 @@
 class SubscriptionsController < ApplicationController
 
-  before_filter :authenticate_user!
-  respond_to :html
+  before_filter :authenticate_person!
+  respond_to :js
 
+  def index
+    @event = Event.find(params[:event_id])
+    @subscriptions = @event.subscriptions
+    
+    respond_with @subscriptions
+  end
+  
   # GET /subscriptions/new
   def new
     @subscription = Subscription.new
+
     respond_with(@subscription)
   end
 

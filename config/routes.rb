@@ -5,10 +5,9 @@ Eatsocial::Application.routes.draw do
       post :subscribe
       post :unsubscribe
     end
+    resources :subscriptions
   end
   
-  resources :subscriptions
-
   devise_for :people, :path_names => { :sign_in => 'login', :sign_out => 'logout', :sign_up => 'register' }
 
   # The priority is based upon order of creation:

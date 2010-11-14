@@ -1,5 +1,10 @@
-<p id="notice"><%= notice %></p>
+<div data-role="page">
+<div data-role="header" data-position="fixed">
+  <h1>Signal Booth</h1>
+</div>
 
+<p id="notice"><%= notice %></p>
+<div id="event-div">
 <p>
   <b>Location:</b>
   <%= @event.location %>
@@ -15,17 +20,12 @@
   <%= @event.image_location %>
 </p>
 
-<% if @event.owner == current_person %>
-  <%= button_to 'Delete this event?', @event, :method => :delete %>
-<% elsif @event.people.exists?(current_person) %>
-  <%= button_to 'Unregister', { :action => 'unsubscribe', :id => @event.id }, :method => :post %>
-<% else %>
-  <%= button_to 'Register', { :action => 'subscribe', :id => @event.id }, :method => :post, :remote => true %>
-<% end %>
+<%= render(:partial => "registration") %>
 
 <br />
 
 <% if @event.owner == current_person %>
-<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Edit', edit_event_path(@event) %>
 <% end %>
-<%= link_to 'Back', events_path %>
+</div>
+</div>

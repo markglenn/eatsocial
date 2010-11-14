@@ -1,4 +1,4 @@
-<div data-theme="g"> 
+<div data-role="page"> 
 
 <div data-role="header" data-position="fixed">
   <h1>Signal Booth</h1>
@@ -7,7 +7,6 @@
 <ul data-role="listview">
 
   <%= render @events %>
- 
   <li>
     <%= link_to "Add Event", new_event_path %>
   </li>
