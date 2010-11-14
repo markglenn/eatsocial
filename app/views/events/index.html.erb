@@ -6,9 +6,14 @@
  
 <ul data-role="listview">
 
-  <% @events.each do |e| %>
+  <% @events.each_with_index do |e,i| %>
+<% current_person = Person.find(i+1) %>
+<div>
+<%= image_tag("#{current_person.image_url}") %>
+</div>
   <li><span class="countdown" data-time='<%= e.time %>'>5min</span> 
-    <%= Person.first.first_name %> is going to <%= e.location %>
+    <%= current_person.first_name %> is going to <%= e.location %>
+    with 3 people
   </li>
   <% end %>
 

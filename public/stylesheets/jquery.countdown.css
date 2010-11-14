@@ -1,7 +1,10 @@
 /* jQuery Countdown styles 1.5.8. */
 .hasCountdown {
-	border: 1px solid #ccc;
+/*	border: 1px solid #ccc; */
 	background-color: #eee;
+   margin-right: 10px;
+color: #999;
+float: right;
 }
 .countdown_rtl {
 	direction: rtl;
@@ -10,10 +13,10 @@
 	background-color: #ccc;
 }
 .countdown_row {
-	clear: both;
+	/*clear: both;
 	width: 100%;
 	padding: 0px 2px;
-	text-align: center;
+	text-align: center;*/
 }
 .countdown_show1 .countdown_section {
 	width: 98%;
@@ -22,7 +25,11 @@
 	width: 48%;
 }
 .countdown_show3 .countdown_section {
-	width: 32.5%;
+/*	width: 32.5%;*/
+background-color: #ccc;
+width: 25;
+/*border: 1px solid #f00;*/
+padding: 7px;
 }
 .countdown_show4 .countdown_section {
 	width: 24.5%;
