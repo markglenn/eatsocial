@@ -11,7 +11,15 @@
 $(document).ready(function() {
 
   $('.countdown').each(function(){
-    $(this).countdown({until: $(this).attr('data-time'), format:'wdhm'}); 
+    $(this).countdown({
+      until: new Date(Date.parse($(this).attr('data-time'))), 
+      format:'wdhm',
+      tickInterval: 10,
+      alwaysExpire: true,
+      onExpiry: function(){
+        $(this).parents( "li" ).slideUp( );
+      }
+    }); 
   });
 	
 });

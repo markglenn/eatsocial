@@ -1,5 +1,6 @@
-
-
+<% if @event == nil %>
+  $("li#event-<%= @event_id %>").slideUp( );
+<% else %>
 $("#event-<%= @event.id %> .people").text(
   '<%= pluralize(@event.people.count, 'person')%> going');
-
+<% end %>

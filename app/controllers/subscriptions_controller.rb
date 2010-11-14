@@ -3,9 +3,11 @@ class SubscriptionsController < ApplicationController
   respond_to :js
 
   def index
-    @event = Event.find(params[:event_id])
-    @subscriptions = @event.subscriptions
-    
+    @event_id = params[:event_id]
+    @event = Event.where(:id => @event_id).first
+  
+    @subscriptions = []
+    @subscriptions = @event.subscriptions if @event != nil
     respond_with @subscriptions
   end
   
