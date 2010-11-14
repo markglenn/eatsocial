@@ -1,4 +1,5 @@
 Eatsocial::Application.routes.draw do
+  
   resources :events do
     post :subscribe
     post :unsubscribe
